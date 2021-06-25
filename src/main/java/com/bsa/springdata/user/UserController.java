@@ -13,6 +13,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
+
     @Autowired
     private UserService userService;
 
@@ -32,4 +33,5 @@ public class UserController {
         return userService.createUser(user)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Can not create user."));
     }
+
 }

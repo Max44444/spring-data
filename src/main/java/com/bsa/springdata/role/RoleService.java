@@ -5,10 +5,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RoleService {
+
     @Autowired
     private RoleRepository roleRepository;
 
     public void deleteRole(String roleCode) {
-        // TODO: Use a single query
+        roleRepository.deleteRoleByCodeIfNoUsers(roleCode);
     }
+
 }

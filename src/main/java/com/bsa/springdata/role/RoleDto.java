@@ -1,8 +1,14 @@
 package com.bsa.springdata.role;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.util.UUID;
 
+@Data
+@Builder
 public class RoleDto {
+
     private final UUID id;
     private final String name;
     private final String code;
@@ -15,4 +21,5 @@ public class RoleDto {
                 .code(role.getCode())
                 .build();
     }
+
 }
